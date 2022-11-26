@@ -68,9 +68,7 @@ public class Server extends Thread{
                 }
                 break;
             }
-        }catch (Exception e){
-
-        }
+        }catch (Exception e){}
 
     }
 
@@ -112,9 +110,7 @@ public class Server extends Thread{
                 }
                 break;
             }
-        }catch (Exception e){
-
-        }
+        }catch (Exception e){}
     }
 
     public void update(ArrayList<HashMap<String, Object>> boardTable){
@@ -146,9 +142,7 @@ public class Server extends Thread{
                 }
                 break;
             }
-        }catch (Exception e){
-
-        }
+        }catch (Exception e){}
     }
 
     public void delete(ArrayList<HashMap<String, Object>> boardTable){
@@ -176,9 +170,7 @@ public class Server extends Thread{
                 }
                 break;
             }
-        }catch (Exception e){
-
-        }
+        }catch (Exception e){}
     }
 
     @Override
@@ -262,7 +254,6 @@ public class Server extends Thread{
                 }
             }
         }catch (Exception e){
-
         }finally {
             try {
                 if(socket != null){
@@ -271,9 +262,7 @@ public class Server extends Thread{
                 }
                 fromClient = null;
                 toClient = null;
-            }catch (Exception e){
-
-            }
+            }catch (Exception e){}
         }
     }
 
@@ -295,8 +284,6 @@ public class Server extends Thread{
                 myServer.start();
             }
         }
-        catch (Exception e){
-
-        }
+        catch (Exception e){}
     }
 }
