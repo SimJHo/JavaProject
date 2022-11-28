@@ -8,7 +8,7 @@ import java.net.Socket;
 import java.util.Scanner;
 
 public class Client extends Thread{
-    Socket socket = null;
+    private Socket socket = null;
 
     public Client(Socket socket){
         this.socket = socket;
@@ -48,7 +48,7 @@ public class Client extends Thread{
         Socket socket = null;
 
         try {
-            socket = new Socket("192.168.0.33", 9999);
+            socket = new Socket("127.0.0.1", 9999);
             System.out.println(socket);
 
             OutputStream out = socket.getOutputStream();

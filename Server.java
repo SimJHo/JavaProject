@@ -155,13 +155,16 @@ public class Server extends Thread{
                     if(socket == s){
                         out = s.getOutputStream();
                         toClient = new DataOutputStream(out);
-                        HashMap<String, Object> board;
 
                         toClient.writeUTF("삭제할 글 번호 >>");
 
-                        int boardNo = Integer.parseInt(fromClient.readUTF()) -1;
+                        int boardNo = Integer.parseInt(fromClient.readUTF());
 
-                        boardTable.remove(boardNo);
+                        for(int i = 0; i < boardTable.size(); i++){
+                            if(boardNo == (int)boardTable.get(i).get("Board_NO")){
+                                boardTable.remove(i);
+                            }
+                        }
 
                         toClient.writeUTF(boardNo + "번 글이 삭제되었습니다.");
 
